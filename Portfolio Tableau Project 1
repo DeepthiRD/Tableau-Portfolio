@@ -1,0 +1,57 @@
+Data Source  : https://data.worldbank.org/indicator/IT.NET.USER.ZS?end=2023&start=2023&view=map&year=2023
+The Data Challendge from *MakeOver Monday Week 45 2024*
+
+#Look into the data and Clean Data Using Python 
+
+Data Densification / Data Scaffolding
+Data densification is a common technique used in Tableau.
+I think it’s important to note that data densification is very closely related to data scaffolding.
+In fact, I often struggle to delineate the two. Both create a sort of artificial structure within your data for the purpose of creating a specific type of data visualization. 
+I’ll distinguish between the two by saying that data densification is more focused on adding additional records (or points) within your data so that you can draw something more advanced.
+
+Data Densification is required to get a Sigmoid Curve for Visualization .
+
+Following Calculations where created to get the Sigmoid Curve on the Visualization.
+
+Calculation 1 : #point =25
+
+Calculation 2 : startX = 
+
+CASE [Group ]
+WHEN "70%-80%" THEN -150
+WHEN "80%-90%" THEN 10
+WHEN "90%-100%" THEN 100
+END
+
+Calculation 3 : startY = -90 
+
+
+Calculation 4: sigmoidfunction = 1/(1 + EXP(0.1)^ -(([Point]-([#point]+1)/2)*([endY - latitude]-[start Y])/([#point]-1)))
+
+Calculation 5: CurveX = [startX] + ([endX - longitude] - [startX]) * [sigmoid function ]
+
+Calculation 6: CurveY = [start Y] + ([Point]-1) * ([endY - latitude] - [start Y]) / ([#point]-1)
+
+Calculation 7: endpoint = [Point] = [#point]
+
+Calculation 8: Group = IF ([2023 (Yr2023)]>70.00 and [2023 (Yr2023)]<80.00) THEN "70%-80%"
+ELSEIF ([2023 (Yr2023)]>80.00 and [2023 (Yr2023)]<90.00) THEN "80%-90%"
+ELSEIF ([2023 (Yr2023)]>90.00 and [2023 (Yr2023)]<=100.00) THEN "90%-100%"
+END
+
+Calculation 9: True = True
+
+Calculation 10: False = False
+
+Add CurveX to Columns and CurveY to Rows .
+Add CurveX again to the Rows and Create a Dual Axis .
+For one CurveX Mark select Line Chart and for another CurveX chart select Circle Marks.
+
+*Format As Required*
+
+
+
+
+
+
+
