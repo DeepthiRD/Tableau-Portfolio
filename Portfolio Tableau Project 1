@@ -1,7 +1,10 @@
 Data Source  : https://data.worldbank.org/indicator/IT.NET.USER.ZS?end=2023&start=2023&view=map&year=2023
+
 The Data Challendge from *MakeOver Monday Week 45 2024*
 
-#Look into the data and Clean Data Using Python 
+the data contains proportion of people that use the internet across the world.
+
+Used Tableau for Data Analysis and Data Visualization. 
 
 Data Densification / Data Scaffolding
 Data densification is a common technique used in Tableau.
