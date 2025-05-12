@@ -1,0 +1,59 @@
+Commodity Cost Index
+
+This Dashboard is designed to compare the changes in commodity prices as for years  2021,2022 and 2023. The price of a commodity being quoted 
+as per a specific unit of measurement, like dollars per barrel for oil, dollars per bushel for corn, or dollars per ounce for gold, 
+allowing for easy comparison between different quantities of the same commodity; essentially, it's the "unit price" for a commodity. 
+
+How to Read the graph in the Visualization  :
+Each circle represents the Commodity rate of the corresponding year, 
+For ex : In the highlighted section the commodity rate is costlier for 2022 as compared to 2023 and 2021 since it’s the tallest branch. 
+*Hover over the circle to know the exact amount of the commodity 
+
+Create a parameter :
+
+String Parameter with Values :
+$/mt
+$/Kg
+$/toz
+$/bbl
+$/mmbtu
+
+Create Calculated Fields below :
+
+1. Unit Parameter =  [Parameters].[Unit Parameter]=[Unit]
+
+2. start x
+  Case [Group 1]
+WHEN "2021" THEN 0
+WHEN "2022" THEN 0
+WHEN "2023" THEN 0
+END
+
+3. endpoint : ([Point #]=[Extra Points]) or ([Extra Points]=0)
+
+4. Curve X : [start x] + ([End X] - [start x]) * [Sigmoid]
+
+5. Curve Y : [start y] + ([Extra Points]-1) * ([End Y] - [start y]) / ([Point #]-1)
+
+6. Max Densification Point : { FIXED :MAX([Extra Points])}
+
+7. Point # : 50
+
+8. Label : -30
+
+9. Sigmoid : 1/(1 + EXP(0.2)^ -(([Extra Points]-([Point #]+1)/2)*([End Y]-[start y])/([Point #]-1)))
+
+10. Sigmoid Y : 1/(1 + EXP(-[Sigmoid]))
+
+11. start Y : -30
+
+12. X Spacing : 1/([Max Densification Point]-1)
+
+13. startpoint Label : [Curve Y]=-30
+
+14. False : False
+
+15. True : True
+
+
+
