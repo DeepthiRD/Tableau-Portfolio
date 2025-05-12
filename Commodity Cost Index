@@ -55,5 +55,10 @@ END
 
 15. True : True
 
+Add Commodity , CurveX to Columns and CurveY to Rows .
+Add CurveX again to the Columns and Create a Dual Axis .
+For one CurveX Mark select Line Chart and for another CurveX chart select Circle Marks.
+Add endpoint to Filter
 
+*Format As Required*
 
