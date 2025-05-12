@@ -47,7 +47,7 @@ Calculation 9: True = True
 Calculation 10: False = False
 
 Add CurveX to Columns and CurveY to Rows .
-Add CurveX again to the Rows and Create a Dual Axis .
+Add CurveX again to the Columns and Create a Dual Axis .
 For one CurveX Mark select Line Chart and for another CurveX chart select Circle Marks.
 
 *Format As Required*
